@@ -10,6 +10,8 @@
  *     name="sort",
  *     in="query",
  *     description="Sorting value. Prefix with a dash (-) to sort by descending order",
+ *     explode=false,
+ *     style="form",
  *     @OA\Schema(
  *       type="string",
  *       default="-created_at",
@@ -20,8 +22,10 @@
  *     name="include",
  *     in="query",
  *     description="Includes optional data",
- *     explode=true,
+ *     explode=false,
+ *     style="form",
  *     @OA\Schema(
+ *       type="string",
  *       enum={"details"},
  *     ),
  *   ),
@@ -29,11 +33,38 @@
  *     name="filter",
  *     in="query",
  *     description="Filter results. Please refer to [Filtering](#tag/Filtering) for more details.",
+ *     style="deepObject",
  *     @OA\Schema(
- *       type="array",
- *       @OA\Items(
+ *       type="object",
+ *       @OA\Property(
+ *         property="currency",
  *         type="string",
- *         enum={"currency", "collected_currency", "ref_type", "ref_id", "merchant_id", "payment_system"},
+ *         description="Filter by currency",
+ *       ),
+ *       @OA\Property(
+ *         property="collected_currency",
+ *         type="string",
+ *         description="Filter by collected currency",
+ *       ),
+ *       @OA\Property(
+ *         property="ref_type",
+ *         type="string",
+ *         description="Filter by reference type",
+ *       ),
+ *       @OA\Property(
+ *         property="ref_id",
+ *         type="string",
+ *         description="Filter by reference id",
+ *       ),
+ *       @OA\Property(
+ *         property="merchant_id",
+ *         type="string",
+ *         description="Filter by merchant ID",
+ *       ),
+ *       @OA\Property(
+ *         property="payment_system",
+ *         type="string",
+ *         description="Filter by payment system",
  *       ),
  *     ),
  *   ),
@@ -52,10 +83,6 @@
  *         ref="#/components/schemas/MetaPagination",
  *       ),
  *     ),
- *   ),
- *   @OA\Response(
- *     response=422,
- *     ref="#/components/responses/Unprocessable",
  *   ),
  *   @OA\Response(
  *     response=500,
@@ -120,8 +147,10 @@
  *     name="include",
  *     in="query",
  *     description="Includes optional data",
- *     explode=true,
+ *     explode=false,
+ *     style="form",
  *     @OA\Schema(
+ *       type="string",
  *       enum={"details"},
  *     ),
  *   ),
@@ -160,8 +189,10 @@
  *     name="include",
  *     in="query",
  *     description="Includes optional data",
- *     explode=true,
+ *     explode=false,
+ *     style="form",
  *     @OA\Schema(
+ *       type="string",
  *       enum={
  *         "account", "reportingAccount",
  *         "account.beneficiary", "account.detor",
