@@ -129,7 +129,7 @@
  *   @OA\Property(
  *     property="currency",
  *     type="string",
- *     description="The currency of the amoun to be debited/credited",
+ *     description="The currency of the amount to be debited/credited",
  *   ),
  *   @OA\Property(
  *     property="reporting_amount_debit",
