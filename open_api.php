@@ -4,9 +4,35 @@
  * @OA\OpenApi(
  *   @OA\Server(
  *     url="/api/{version}",
+ *     description="Development server",
  *     @OA\ServerVariable(
  *       serverVariable="version",
  *       default="v1",
+ *       enum={
+ *         "v1"
+ *       },
+ *     ),
+ *   ),
+ *   @OA\Server(
+ *     url="http://develop.sp-ledger.s3.stuffio.com/api/{version}",
+ *     description="Staging server",
+ *     @OA\ServerVariable(
+ *       serverVariable="version",
+ *       default="v1",
+ *       enum={
+ *         "v1"
+ *       },
+ *     ),
+ *   ),
+ *   @OA\Server(
+ *     url="https://sp-ledger.service.consul/api/{version}",
+ *     description="Production server",
+ *     @OA\ServerVariable(
+ *       serverVariable="version",
+ *       default="v1",
+ *       enum={
+ *         "v1"
+ *       },
  *     ),
  *   ),
  *   x={
@@ -26,15 +52,13 @@
  *     title="Ledger API",
  *     x={
  *       "logo": {
- *         "url": "/images/brand/logo.svg",
+ *         "url": "/images/brand/Ledger-logo.png",
  *         "altText": "Ledger",
  *       },
  *     },
  *     description="# Introduction
 
-The API provides an interface for connecting and extracting online banking account information to meet your individual business requirements. We like to call it the “access to the account” concept.
-
-The API is built on HTTP, our API is RESTful. It has predictable resource URLs. It returns HTTP response codes to indicate errors. It also accepts and returns JSON in the HTTP body. You can use your favorite HTTP/REST library for your programming language to use Spiderpile's API.
+The API is built on HTTP, our API is RESTful. It has predictable resource URLs. It returns HTTP response codes to indicate errors. It also accepts and returns JSON in the HTTP body. You can use your favorite HTTP/REST library for your programming language to use Ledger's API.
 
 ## JSON Request Bodies
 

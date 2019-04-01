@@ -33,7 +33,8 @@
  *   ),
  *   @OA\Property(
  *     property="date",
- *     type="date",
+ *     type="string",
+ *     format="date",
  *     description="Transaction converted/completed date",
  *   ),
  *   @OA\Property(
@@ -48,7 +49,8 @@
  *   ),
  *   @OA\Property(
  *     property="expected_collecting_date",
- *     type="date",
+ *     type="string",
+ *     format="date",
  *   ),
  *   @OA\Property(
  *     property="merchant_id",
